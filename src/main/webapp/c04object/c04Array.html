@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组对象</title>
+</head>
+<body>
+<script>
+    var arr = new Array();
+    var arr2 = new Array(3);
+    arr[0] = "jack";
+    arr[1] = "marry";
+    arr[2] = "tom";
+    arr[3] = "lucy";
+    arr[4] = "june";
+
+    arr2[0] = 2;
+    arr2[1] = 1;
+    arr2[2] = 5;
+
+    for (var i = 0; i < arr.length; i++) {
+        document.write(arr[i] + "<br/>");
+    }
+    document.write("<hr/>");
+    var o;
+    for (o in arr2) {
+        document.write(arr2[o] + "<br/>");
+    }
+    document.write("<hr/>");
+    //排序，改变原数组
+    document.write("sort()：" + arr.sort() + "<br/>");
+    document.write("sort()：" + arr2.sort() + "<br/>");
+    document.write("<hr/>");
+    for (var i = 0; i < arr.length; i++) {
+        document.write(arr[i] + "<br/>");
+    }
+    document.write("<hr/>");
+    var o;
+    for (o in arr2) {
+        document.write(arr2[o] + "<br/>");
+    }
+    document.write("<hr/>");
+
+    //连接1，不改变原数组
+    document.write("join()：" + arr.join() + "<br/>");
+    document.write("join(...)：" + arr2.join("...") + "<br/>");
+    document.write("<hr/>");
+
+    //连接2，不改变原数组
+    document.write("arr.concat(arr2)" + arr.concat(arr2) + "<br/>");
+    document.write("<hr/>");
+
+    //反转，改变原数组
+    document.write("reverse()" + arr.reverse() + "<br/>");
+    document.write("<hr/>");
+    for (var i = 0; i < arr.length; i++) {
+        document.write(arr[i] + "<br/>");
+    }
+
+</script>
+</body>
+</html>

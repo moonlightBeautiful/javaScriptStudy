@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 自定义对象</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    /*
+        实例化对象，动态添加和删除对象的属性和方法
+    */
+    /*
+       var p=new Object();  //定义一个对象
+       p.name="Jack"; // 动态的添加属性
+       function speak(something){
+           alert(something);
+       }
+       p.func=speak;  // 动态的添加方法
+       alert(p.name);
+       p.func("Hello,Hello,大家好！");
+
+       delete p.name;    // 动态的删除属性,方式1
+       alert(p.name);    // 动态的删除方法，方式1
+       delete p.func;
+       p.func("Hello,Hello,大家好！");
+    */
+
+    /*
+        p.name=undefined;    // 动态的删除属性,方式2
+        p.func=undefined;       // 动态的删除方法，方式1
+        alert(p.name);
+        p.func("Hello,Hello,大家好！");
+    */
+
+    /* 对象构造方法 */
+    function person(name, age) {
+        this.name2 = name;  //对象属性，相当于类的成员变量
+        this.age2 = age;
+
+        function speak(something) {
+            alert(something);
+        }
+
+        this.func = speak;  //对象属性，相当于类的成员方法
+    }
+    var p1 = new person("Jack", 12);
+    alert(p1.name2);
+    p1.func("Hello,EveryOne!");
+</script>
+</body>
+</html>
