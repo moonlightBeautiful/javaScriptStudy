@@ -28,7 +28,34 @@
     7.函数：可重载，return直接结束函数
         function 函数名(入参){函数体}
     8.continue break
-3.js 对象
+3.JS DOM
+    1.操作dom节点事件
+        给HTML标签添加onclick事件，然后js函数写这个事件的函数
+    2.操作dom
+        修改dom节点的值
+            document.getElementById().innerHTML="";     //容器 比如div
+            document.getElementById().value="";   //非容器 比如 input text
+        添加dom节点
+            创建节点元素和节点值，然后得到父节点，在父节点的里面添加
+            var para = document.createElement("p");
+            var node = document.createTextNode("...前...");
+            var para2 = document.createElement("p");
+            var node2 = document.createTextNode("...后...");
+            para.appendChild(node);
+            para2.appendChild(node2);
+            var parent = document.getElementById("parent");
+            var son1 = document.getElementById("son1");
+            parent.insertBefore(para, son1);
+            parent.appendChild(para2);
+        删除dom节点
+            得到父节点，删除子节点
+             var parent = document.getElementById("parent");
+             var son1 = document.getElementById("son1");
+             parent.removeChild(son1);
+    3.操作dim节点样式
+        .style.样式=""
+        document.getElementById("gril").style.color = "red";
+4.js 对象
     1.原型 没搞懂
     2.实例化一个对象：var 对象 = new Object();
     3.动态添加属性：对象.随便取个属性名 = 值；
