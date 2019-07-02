@@ -104,3 +104,15 @@
             arr.join("字符")      //把数组的值串联起来，可以指定字符，不指定则是逗号
             arr.concat(arr2)    //把数组1和数组2的值用，逗号串联起来
             arr.reverse()   //颠倒，会改变原数组
+5.js 常用函数
+     1.全局函数：不属于任何一个对象
+        1.eavl():计算字符串表达式，也可以把json字符串转换成json对象
+     2.window对象常用函数
+        1.alert()
+        2.confirm()
+        3.prompt()
+        4.setTimeout("指定函数",毫秒)：只执行一次
+        5.setInterval("指定函数",毫秒)：指定间隔执行
+        6.open("url"[其他参数自己选择])：打开窗口
+        7.onload=函数 或者 body标签onload=函数：文档加载完毕
+        8.onresize=函数：窗口大小发生变化
