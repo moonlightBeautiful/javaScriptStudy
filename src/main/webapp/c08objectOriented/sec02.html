@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三种类型的属性</title>
+</head>
+<body>
+<script type="text/javascript">
+    function func() {
+        var privatePro = "私有属性";
+        this.objPro1 = "对象属性1";
+        func.prototype.objPro2 = "对象属性2";
+    }
+
+    func.classPro = "类属性";
+
+    alert(func.classPro);
+    var func = new func();
+    alert(func.objPro1);
+    alert(func.objPro2);
+</script>
+</body>
+</html>

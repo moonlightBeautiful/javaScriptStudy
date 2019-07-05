@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function func() {
+        var a = 22;
+
+        function func2() {
+            return ++a;
+        }
+
+        return func2;
+    }
+
+    var result = func();
+    alert("访问func的私有局部变量a:" + result());
+    alert("访问func的私有局部变量a:" + result());
+    alert("访问func的私有局部变量a:" + result());
+</script>
+</body>
+</html>

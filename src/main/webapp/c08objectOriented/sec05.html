@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承改变自身类型prototype</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Animal(name, age) {
+        this.name = name;
+        this.age = age;
+        this.shout = function () {
+            alert("我是：" + this.name + ",今年：" + this.age);
+        };
+        this.action = function () {
+            alert("会吃");
+        };
+    }
+
+    function Dog(name, age) {
+        Animal.apply(this, [name, age]);
+    }
+
+    Dog.prototype = new Animal();
+
+    var jack = new Dog("jack", 1);
+    alert(jack.name);
+    alert(jack.age);
+    jack.shout();
+    jack.action();
+</script>
+</body>
+</html>

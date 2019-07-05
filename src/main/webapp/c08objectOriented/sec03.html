@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三种类型方法</title>
+</head>
+<body>
+<script type="text/javascript">
+    function C() {
+        var privateFunc = function () {
+            alert("私有方法");
+        };
+        privateFunc();
+        this.objFunc1 = function () {
+            alert("对象方法1");
+        };
+        C.prototype.objFunc2 = function () {
+            alert("对象方法2");
+        };
+    }
+
+    C.classFunc1 = function () {
+        alert("类方法");
+    };
+    C.classFunc1();
+
+    var c = new C();
+    c.objFunc1();
+    c.objFunc2();
+</script>
+</body>
+</html>
