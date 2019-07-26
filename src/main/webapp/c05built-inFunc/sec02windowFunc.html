@@ -2,30 +2,41 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript window对象常用方法及事件</title>
-    <script type="text/javascript">
-        /* window.onload=function(){
-            alert("文档加载完毕了");
-        } */
+    <title>JavaScript window对象常用方法及事件,可以忽略window对象,window代表当前窗口</title>
 
-        function init() {
-            alert("文档加载完毕了");
-        }
-
-        window.onresize = function () {
-            alert("窗体大小发生了变化！");
-        }
-    </script>
 </head>
-<body onload="init()">
+<body><!--<body onload="init()">-->
+<div id="today"></div>
+<input type="text" id="userName" value="oldName">
+</body>
+</html>
 <script type="text/javascript">
-    window.alert("window对象的alert方法");
-
-    function dzt() {
-        alert("5秒后屌炸天");
+    //一。window.alert消息提示框
+    /*window.alert("window对象的alert方法");*/
+    //二。window的onload事件:会在页面或图像加载完成后立即发生,2种使用方式
+    //1. <body onload="函数对象">
+    /*function init() {
+        alert("文档加载完毕了");
+    }*/
+    //2. window.onload=函数/函数对象
+    /*function init {
+        alert("文档加载完毕了");
     }
-
-    function setDateTime() {
+    window.onload = init;*/
+    /* window.onload = function () {
+        alert("文档加载完毕了");
+    }*/
+    //三。window.onresize=函数当浏览器被重置大小时执行
+    /*window.onresize = function () {
+        alert("窗体大小发生了变化！");
+    }*/
+    //四。window.setTimeout多少秒后执行一次
+    /* function dzt() {
+         alert("3秒后屌炸天");
+     }
+     window.setTimeout("dzt()", 3000);*/
+    //五。window.setInterval每间隔多少时间后执行一次
+    /*function setDateTime() {
         var date = new Date();
         var day = date.getDay();
         var week;
@@ -55,11 +66,25 @@
         var today = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日  " + week + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
         document.getElementById("today").innerHTML = today;
     }
+    window.setInterval("setDateTime()", 1000);*/
 
-    window.setTimeout("dzt()", 5000);
-    window.setInterval("setDateTime()", 1000);
-    window.open("http://www.java1234.com");
+    //六。window.open：打开一个新窗口，返回新窗口window对象，并且可与源窗口相互传递数据，打开新建窗口后，源窗口可以操作。
+    // 打开新的窗口
+    /* var newWindow = window.open("http://www.runoob.com"_blank","width=400, height=400");*/
+    //打开新的窗口、传递单个参数，
+    /* var newWindow = window.open("newPage.html?id=" + 1, "_blank", "width=400, height=400");*/
+
+    //七。window.ShowModalDialog：谷歌浏览器不支持，打开一个子窗口，，返回子窗口returnValue的值。并且可与父窗口相互传递数据，它与window.open的最大区别就在于由ShowModalDialog打开子窗口后，父窗口将不能操作。
+    var ret =  window.showModalDialog("newPage.html");
+    alert(ret);
+
+    //七。window.opener属性代表创建该窗口的 Window 对象的引用，比如关闭新建的窗口
+    /*newWindow.opener.close();*/
+
+    //八。window.parent当前窗口的父窗口，用到一个html中网页嵌套，单窗口就是本身
+    /*lert(window.parent.location);*/
+
+    //window.location 对象用于获得当前页面的地址 (URL) .focus()
+    /*window.location.Reload();*/
+
 </script>
-<div id="today"></div>
-</body>
-</html>

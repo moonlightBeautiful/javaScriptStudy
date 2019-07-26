@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子窗口</title>
+    <script>
+        //接收window.open传递过来的单个参数
+        /*var afterUrl =  window.location.search.substring(1);
+        var afterEqual = afterUrl.substring(afterUrl.indexOf('=')+1);
+        alert(afterUrl);
+        alert(afterEqual);*/
+
+        //window.open返回的是一个Window对象，如果要返回值，建议这么做：给隐藏域和文本框并赋值
+        /* window.opener.document.getElementById("userName").value = "newName";*/
+        //window.showModalDialog 返回给源窗口的值，这么做
+        /*window.returnValue="ok";*/
+        //opener属性代表创建该窗口的源窗口 Window 对象的引用
+        /*window.opener.close();*/
+
+
+        //接收form参数*/
+    </script>
+</head>
+<body>
+子窗口1
+</body>
+</html>
