@@ -134,3 +134,8 @@
             prototype表示了一个类的属性的集合
     4.多态：子类型.prototype = new 父类型();
         多个子类型 instanceOf 父类型
+        
+       
+工作中的获得：
+    1.在js文件中，引入其他的js文件
+        document.write("<script src='.js'></script>");
