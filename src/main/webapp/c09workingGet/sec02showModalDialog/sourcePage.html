@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框血虚-源窗口</title>
+</head>
+<body>
+<h1>源窗口</h1>
+<p>简介：window.showModalDialog打开模态框，谷歌浏览器不支持。
+    返回值是目标窗口的window .returnValue属性的值。
+    关闭模态框之后，源窗口才可操作，获得焦点后才会执行showModalDialog后面的js脚本。</p>
+<p>源窗口向目标模态框传递参数: window.showModalDialog("要打开的网页", 要传递的参数（可以传递对象，例如window）,"要打开的网页的配置项"}</p>
+<p>目标模态框获取源窗口的参数： var obj = window.dialogArguments(...）</p>
+<p>目标模态框向源窗口传递参数： window.returnValue = 要传递的参数，可以传递对象，例如window</p>
+<p>源窗口获取目标模态框的参数，也就是showModalDialog的返回值，var obj = window.showModalDialog(...）</p>
+<p>note：传递的参数可以是任意类型数据。</p>
+</body>
+</html>
+<script>
+    var obj = new Object();
+    obj.name = "wowowo";
+    var objb = window.showModalDialog("./targetPage.html", obj,
+        "dialogWidth=400px;dialogHeight=400px;dialogLeft=400px;dialogTop=200px;center=1;middle=yes;help=no;status=no;scroll=yes;resizable=yes;minimize:yes;maximize:yes;");
+    alert("模态框传递给源页面的数据：" + objb.name);
+</script>

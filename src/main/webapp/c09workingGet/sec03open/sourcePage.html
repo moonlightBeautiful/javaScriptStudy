@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.open</title>
+</head>
+<body>
+<p>简介：window.open打开新窗口。返回值是目标新窗口window对象。
+    源窗口获得焦点后后才会执行open后面的js脚本。</p>
+<p>源窗口向目标新窗口传递参数，方式一: var targetWindow = window.open("目标新窗口的url?要传递的参数", "新窗口name","要打开的网页的配置项"}</p>
+<p>源窗口向目标新窗口传递参数，方式二: input type="hidden" id="oid" value="ProcessFlow:1234"</p>
+<p>目标新窗口获取源窗口的参数，方式一: window.location.search.substring(1).split("&")[0].split("=")[0]</p>
+<p>目标新窗口获取源窗口的参数，方式二: window.opener.document.getElementById("源窗口隐藏标签id").value</p>
+<p>目标新窗口向源窗口传递参数： </p>
+<p>note：opener是DOM中提供的一个默认对象，表示的就是某个窗口的原窗口。</p>
+<p>note：window.location 页面的位置对象，toString方法就是输出window.location.href。</p>
+<p>note：window.location.href 返回当前页面的URL。</p>
+<p>note：window.location.reload 刷新当前页面，提交数据。</p>
+<p>note：window.location.href=window.location.href 刷新当前页面，不提交数据。</p>
+<p>note：window.location.search是url?（包含？）后面的部分。</p>
+<input type="hidden" id="oid" value="ProcessFlow:1234">
+</body>
+</html>
+<script>
+
+    //传递基本数据类型  ok
+    var targetWindow = window.open("./targetPage.html?name=" + "gaoxu" + "&age=" + 1 +"&callback=" + "say", "",
+        "width=800,height=800");
+
+    function say(result) {
+        alert("新窗口调用了原窗口的回调函数say："+result);
+    }
+
+</script>
