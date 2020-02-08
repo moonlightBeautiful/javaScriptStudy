@@ -13,8 +13,8 @@
     alert("目标新窗口url?（包含?）后面部分：" + window.location.search);
     alert("获取参数，第一个key，方式一：" + window.location.search.substring(1).split("&")[0].split("=")[0]);
     alert("获取参数，方式二：" + opener.document.getElementById("oid").value);*/
-
+    alert("获取参数，方式二：" + opener.document.getElementById("oid").value);
     /*opener.close();*/
     // 一般都是jsp页面通过request获取，然后opener.<%=callback%>(result);
-    opener.say("you");
+   opener.say("you");
 </script>

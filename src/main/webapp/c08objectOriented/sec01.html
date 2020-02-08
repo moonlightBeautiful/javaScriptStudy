@@ -7,23 +7,24 @@
 <body>
 <script type="text/javascript">
     //方式一
-    /*var marry = {
+    var marry = {
         name: "marry",
         age: 2,
-        shout: function () {
+        shout: function (a) {
             alert("我是：" + this.name + ",今年：" + this.age);
+            alert(a);
         },
         action: function () {
             alert("会吃");
         }
     };
 
-    alert(marry.name);
-    alert(marry.age);
-    marry.shout();
-    marry.action();*/
+    /*alert(marry.name);
+    alert(marry.age);*/
+    marry.shout(11);
+    /*marry.action();*/
     //方式二
-    function Dog(name, age) {
+    /*function Dog(name, age) {
         this.name = name;
         this.age = age;
         this.shout = function () {
@@ -38,7 +39,7 @@
     alert(jack.name);
     alert(jack.age);
     jack.shout();
-    jack.action();
+    jack.action();*/
 </script>
 </body>
 </html>

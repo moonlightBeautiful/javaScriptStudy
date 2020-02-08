@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>opener和parent</title>
+</head>
+<body>
+<p>
+    opener即谁打开我的，比如A页面利用window.open弹出了B页面窗口，那么A页面所在窗口就是B页面的opener，
+    在B页面通过opener对象可以访问A页面。opener对象可能为null。所以在调用opener的对象前，要先判断对象是否为null，否则会出现“对象为空或者不存在”的JS错误。</p>
+<p>
+    parent表示父窗口，比如一个A页面利用iframe或frame调用B页面，那么A页面所在窗口就是B页面的parent。
+</p>
+<p>
+    top指分割窗口（用iframe等）最高层次的浏览器窗口
+</p>
+</body>
+</html>

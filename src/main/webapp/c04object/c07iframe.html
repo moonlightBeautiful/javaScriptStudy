@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe学习</title>
+</head>
+<script>
+    alert(undefined == null);  //undefined等于null。
+    function callIframe1() {
+        var iframe1 = document.getElementById('iframe1');
+        //demo1.html页面中的js控制了iframe1.html页面的字体颜色
+        iframe1.contentWindow.iframe1Method1(); //调用iframe方法
+        iframe1.contentWindow.document.body.style.color = 'red';     //改变iframe标签样式
+    }
+    function bb() {
+        alert("子调用父");
+    }
+</script>
+<body>
+<input type="button" name="btn1" onclick="callIframe1()" value="点击按钮控制iframe1页面"/>
+<iframe id="iframe1" src="iframe1.html" width="300" height="200"></iframe>
+iframe是行内框架，不会自动换行。
+<iframe id="iframe2" src="iframe1.html" width="300" height="200"></iframe>
+<hr>
+<ol>iframe对象(var iframe1 = document.getElementById('iframe1');)的属性：
+    <li>frameborder:1、0， 规定是否显示框架周围的边框。</li>
+    <li>height/width:pixels、%， 规定 iframe 的高/宽度。</li>
+    <li>src：URL，规定在 iframe 中显示的文档的 URL。</li>
+    <li>name：frame_name，规定 iframe 的名称。</li>
+    <li>marginheight/ marginwidth： pixels，定义 iframe 的顶部和底部的边距 或者 定义 iframe 的左侧和右侧的边距。 </li>
+    <li>contentWindow:返回iframe元素的Window对象</li>
+    <li>frames:返回iframe们的 window 对象的数组</li>
+    <li>length:返回iframe们的 window 对象的数组的数量</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setTimeout：指定时间后执行一次指定函数。</title>
+</head>
+<body>
+<script>
+    function hello() {
+        alert("hello");
+    }
+
+    //2种执行方式，返回值为定时器对象
+    var t1 = window.setTimeout(hello, 1000); //使用方法名字执行方法
+    //var t2 = window.setTimeout("hello()",3000);//使用字符串执行方法
+
+    //window.clearTimeout(t1);//去掉定时器
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+框架2， <input type="button" name="btn2" id="btn2" onclick="aa()" value="点击按钮控制父页面"/>
+</body>
+</html>
+
+<script>
+
+    function aa() {
+        var oDiv = window.parent.document.body.children[0];
+        oDiv.style.color = 'red';
+        window.parent.bb();
+    }
+    function iframe1Method1() {
+        alert("父调用子iframe1");
+    }
+</script>

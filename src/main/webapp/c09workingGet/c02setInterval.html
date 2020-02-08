@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>setInterval：指定时间为周期循环执行指定函数。</title>
+</head>
+<body>
+<script>
+    function hello() {
+        alert("hello");
+    }
+
+    function say() {
+        alert("say");
+    }
+
+    //2种执行方式，返回值为定时器对象
+    // var t1 = window.setInterval(hello,2000);  //使用方法名字执行方法
+    var t1 = window.setInterval(function () {hello(); say(); },2000);  //使用方法名字执行方法
+
+    //var t2 = window.setInterval("hello()", 2000); //使用字符串执行方法
+
+    //window.clearInterval(t2);//去掉定时器
+</script>
+</body>
+</html>

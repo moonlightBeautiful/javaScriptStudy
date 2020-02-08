@@ -6,11 +6,13 @@
 </head>
 <body>
 <h1>源窗口</h1>
-<p>简介：window.showModalDialog打开模态框，谷歌浏览器不支持。
-    返回值是目标窗口的window .returnValue属性的值。
-    关闭模态框之后，源窗口才可操作，获得焦点后才会执行showModalDialog后面的js脚本。</p>
+<p>
+    简介：
+        window.showModalDialog打开模态框，关闭模态框之前源窗口不可操作，关闭模态框之后，源窗口才可操作后面的js脚本。谷歌浏览器不支持。
+        返回值是目标窗口的window .returnValue属性的值。
+</p>
 <p>源窗口向目标模态框传递参数: window.showModalDialog("要打开的网页", 要传递的参数（可以传递对象，例如window）,"要打开的网页的配置项"}</p>
-<p>目标模态框获取源窗口的参数： var obj = window.dialogArguments(...）</p>
+<p>目标模态框获取源窗口的参数： var obj = window.dialogArguments;</p>
 <p>目标模态框向源窗口传递参数： window.returnValue = 要传递的参数，可以传递对象，例如window</p>
 <p>源窗口获取目标模态框的参数，也就是showModalDialog的返回值，var obj = window.showModalDialog(...）</p>
 <p>note：传递的参数可以是任意类型数据。</p>
