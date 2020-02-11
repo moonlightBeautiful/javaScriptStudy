@@ -11,13 +11,13 @@
         this.objPro1 = "对象属性1";
         func.prototype.objPro2 = "对象属性2";
     }
-
     func.classPro = "类属性";
 
-    alert(func.classPro);
-    var func = new func();
-    alert(func.objPro1);
-    alert(func.objPro2);
+    alert(func.classPro); //类属性使用
+    var myFunc = new func();
+    alert(myFunc.objPro1);  //对象属性使用
+    alert(myFunc.objPro2); //对象属性使用
+    alert(myFunc.classPro); //对象不能使用类属性
 </script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量的作用域</title>
+</head>
+<body>
+<script>
+    //全局变量：函数内部访问局部变量。
+    /* var a = 22;
+     function func() {
+         alert(a);
+     }
+     func();
+     alert(a);*/
+
+    //局部变量：
+   /* function func() {
+        var a = 22;
+        alert(a);
+    }
+    func();
+    alert(a);//a是局部变量，取不到*/
+
+    //方法内定义全局变量：方法内定义变量不使用var关键字，则是全局变量
+    function func() {
+        a = 22;
+        alert(a);
+    }
+    func();
+    alert(a);
+</script>
+</body>
+</html>

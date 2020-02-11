@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>继承不改变自身类型apply</title>
+    <title>继承改变自身类型prototype</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -20,6 +20,8 @@
     function Dog(name, age) {
         Animal.apply(this, [name, age]);
     }
+
+    Dog.prototype = new Animal();  //原型继承
 
     var jack = new Dog("jack", 1);
     alert(jack.name);

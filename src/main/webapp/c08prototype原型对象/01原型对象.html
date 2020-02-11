@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function students() {
+    }
+
+    // 可以使用students.prototype 直接访问到原型对象
+    //给students函数的原型对象中添加一个属性 name并且值是 "张三"
+    students.prototype.name = "张三";
+    students.prototype.age = 20;
+
+    var stu = new students();
+    /*
+        访问stu对象的属性name，虽然在stu对象中我们并没有明确的添加属性name，但是
+        stu的__proto__属性指向的原型中有name属性，所以这个地方可以访问到属性name值。
+        注意：这个时候不能通过stu对象删除name属性，因为只能删除在stu中添加的属性。
+    */
+   /* delete stu.name; //这个时候不能通过stu对象删除原型name属性
+    alert(stu.name);*/
+
+
+
+    var stu1 = new students();
+    /*alert(stu1.name);  // 张三  */
+    alert(stu.name === stu1.name);  // true 都是从原型中找到的，所以一样
+    stu.name = "李四";  // 由于不能修改原型中的值，则这种方法就直接在stu中添加了一个新的属性name，然后在stu中无法再访问到原型中的属性(先访问stu的name，找到了就不找原型了，找不到就去原型中找)。
+    alert(stu.name); //李四
+    alert(stu1.name); //张三
+</script>
+
+</body>
+</html>

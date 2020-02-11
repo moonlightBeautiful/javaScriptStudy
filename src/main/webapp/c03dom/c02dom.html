@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>JavaScript操作DOM节点</title>
     <script type="text/javascript">
+        //修改节点的值
         function modifyDOM() {
             document.getElementById("txt").innerHTML = "用户名：";
             document.getElementById("userName").value = "Jack";
         }
-
+        //添加节点
         function addDOM() {
             var para = document.createElement("p");
             var node = document.createTextNode("...前...");
@@ -21,7 +22,7 @@
             parent.insertBefore(para, son1);
             parent.appendChild(para2);
         }
-
+        //移除节点
         function removeDOM() {
             var parent = document.getElementById("parent");
             var son1 = document.getElementById("son1");

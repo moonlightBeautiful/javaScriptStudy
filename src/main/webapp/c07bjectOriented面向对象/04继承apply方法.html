@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>继承改变自身类型prototype</title>
+    <title>继承不改变自身原型apply</title>
 </head>
 <body>
 <script type="text/javascript">
@@ -18,16 +18,14 @@
     }
 
     function Dog(name, age) {
-        Animal.apply(this, [name, age]);
+        Animal.apply(this, arguments); //把自身的属性和方法克隆一份给Dog，第一个参数this是Dog对象，第二个参数是Dog函数入参
     }
-
-    Dog.prototype = new Animal();
 
     var jack = new Dog("jack", 1);
     alert(jack.name);
     alert(jack.age);
-    jack.shout();
-    jack.action();
+    jack.shout(); //调用父类的方法
+    jack.action();//调用父类的方法
 </script>
 </body>
 </html>

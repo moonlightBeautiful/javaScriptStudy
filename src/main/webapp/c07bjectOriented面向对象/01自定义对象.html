@@ -6,8 +6,8 @@
 </head>
 <body>
 <script type="text/javascript">
-    //方式一
-    var marry = {
+    //方式一 对象初始化器方式
+    /*var marry = {
         name: "marry",
         age: 2,
         shout: function (a) {
@@ -18,17 +18,17 @@
             alert("会吃");
         }
     };
-
-    /*alert(marry.name);
-    alert(marry.age);*/
+    alert(marry.name);
+    alert(marry.age);
     marry.shout(11);
-    /*marry.action();*/
-    //方式二
-    /*function Dog(name, age) {
+    marry.action();*/
+    //方式二  构造函数方式
+    function Dog(name, age) {
         this.name = name;
         this.age = age;
-        this.shout = function () {
+        this.shout = function (a) {
             alert("我是：" + this.name + ",今年：" + this.age);
+            alert(a);
         };
         this.action = function () {
             alert("会吃");
@@ -38,8 +38,8 @@
     var jack = new Dog("jack", 1);
     alert(jack.name);
     alert(jack.age);
-    jack.shout();
-    jack.action();*/
+    jack.shout("a");
+    jack.action();
 </script>
 </body>
 </html>

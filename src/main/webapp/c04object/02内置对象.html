@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置对象</title>
+</head>
+<body>
+<script>
+    //1.字符串对象
+    /*var s1 = "实例化字符串方式一";
+    var s2 = new String("实例化字符串abc方式二");
+    document.write(" 的长度是：" + s2.length + " <br/>");
+    document.write(" 首次出现位置：" + s2.indexOf("abc", 0) + "<br/>");
+    document.write(" 替换：" + s2.replace("abc", "java1234") + "<br/>");*/
+
+    //2.日期对象
+    /*var date = new Date();
+    document.write("返回距 1970 年 1 月 1 日之间的毫秒数：" + date.getTime() + "<br/>");
+    document.write("返回 4位数 年份：" + date.getFullYear() + "<br/>");
+    document.write("返回 月份 0-11：" + (date.getMonth() + 1) + "<br/>");
+    document.write("返回 一个月中某一天 1-31：" + date.getDate() + "<br/>"); //
+    document.write("返回 小时 0-23：" + date.getHours() + "<br/>");
+    document.write("返回 分钟 0-59：" + date.getMinutes() + "<br/>");
+    document.write("返回 秒 0-59：" + date.getSeconds() + "<br/>");
+    document.write("返回 一周中的某一天 0-6：" + date.getDay() + "<br/>");*/
+
+    //3. 数组对象
+    /* var arr = new Array();  //实例化方式1
+     arr[0] = "jack";
+     arr[1] = "marry";
+     arr[2] = "tom";
+     arr[3] = "lucy";
+     arr[4] = "june";
+     var arr2 = new Array(3); //实例化方式2 虽然定义了长度，但是可以动态改变
+     arr2[0] = 2;
+     arr2[1] = 1;
+     arr2[2] = 5;
+     arr2[3] = 5;
+     alert(arr2.length);
+     for (var i = 0; i < arr.length; i++) { //循环遍历数组
+         document.write(arr[i] + "<br/>");
+     }
+     for (var o in arr2) {  //循环遍历数组
+         document.write(arr2[o] + "<br/>");
+     }
+     document.write("排序sort()，改变原数组：" + arr.sort() + "<br/>");
+     for (var i = 0; i < arr.length; i++) {
+         document.write(arr[i] + "<br/>");
+     }
+     document.write("用指定字符连接数组每个元素，不改变原数组，默认逗号，join()：" + arr.join() + "<br/>");
+     document.write("连接数组，不会改变现有的数组，而仅仅会返回被连接数组的一个副本。arr.concat(arr2...)：" + arr.concat(arr2) + "<br/>");
+     document.write("反转，改变原数组reverse()：" + arr.reverse() + "<br/>");*/
+
+
+    //4. function对象
+    /*function say1(name,age) { //实例化方式1
+        alert(name+"："+age);
+    }
+    //say1(1,2);
+    var sayFunc = new Function("name", "age", "alert(name+'今年'+age+'岁了')"); //实例化方式2  最后一个参数是方法体
+    //sayFunc("李四", 4);
+    alert("sayFunc方法对象属性length入参个数：" + sayFunc.length);
+    alert("sayFunc方法对象方法toString()源码：" + sayFunc.toString());
+    alert("sayFunc方法对象方法valueOf()源码：" + sayFunc.valueOf());*/
+    //note1：下面这种实例化方式带方法名，对象可用，方法名不可以用
+    /*var sayFunc = function say(name, age) {
+        alert(name + "今年" + age + "岁了");
+    };
+    sayFunc("张三", 3);//可用
+    say("张三", 3); //不可用*/
+    //note2：声明相同方法名的方法，后面的覆盖前面的，同一个方法名只能存在一个，不管传入的参数是几个，一次匹配，匹配不到的就undefined，匹配多的就无效
+    /* function say(name, age) {
+         alert(name + "今年" + age + "岁了");
+     }
+     function say(name, age, food) {
+         alert(name + "今年" + age + "岁了，喜欢吃" + food);
+     }
+     say("张三", 3);
+     say("张三", 3,"西瓜");
+     say("张三", 3,"西瓜","香肠");*/
+</script>
+</body>
+</html>
