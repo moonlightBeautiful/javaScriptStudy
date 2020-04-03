@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框-源窗口</title>
+</head>
+<body>
+<p>
+    简介：关闭模态框之不可操作前源窗口和源窗口的js脚本停止执行，关闭模态框之后，源窗口后面的js脚本才执行。
+</p>
+<p>
+    使用，源窗口： var 返回参数 = window.showModalDialog("要打开的网页", 入参（可以传递对象，例如window）,"模态框配置项"}
+</p>
+<p>
+    使用，目标窗口: 获取入参var obj = window.dialogArguments;。返回参数window.returnValue = 要传递的参数，可以传递对象，例如window。
+</p>
+<p>
+    note：入参和返回参数可以是任意类型数据。
+</p>
+</body>
+</html>
+<script>
+    var obj = new Object();
+    obj.name = "lily";
+    var objb = window.showModalDialog("./06showModalDialog打开模态框02目标.html", obj, "dialogWidth=400px;dialogHeight=400px;dialogLeft=400px;dialogTop=200px;center=1;middle=yes;help=no;status=no;scroll=yes;resizable=yes;minimize:yes;maximize:yes;");
+    alert("模态框传递给源页面的数据：" + objb.name);
+</script>

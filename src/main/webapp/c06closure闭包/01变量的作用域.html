@@ -15,17 +15,16 @@
      alert(a);*/
 
     //局部变量：
-   /* function func() {
-        var a = 22;
-        alert(a);
-    }
-    func();
-    alert(a);//a是局部变量，取不到*/
+    /* function func() {
+         var a = 22;
+         alert(a);
+     }
+     func();
+     alert(a);//a是局部变量，取不到*/
 
-    //方法内定义全局变量：方法内定义变量不使用var关键字，则是全局变量
+    //方法内定义全局变量：方法内定义变量不使用var关键字，则是全局变量，但是要运行一下func，才算声明了全局变量
     function func() {
         a = 22;
-        alert(a);
     }
     func();
     alert(a);

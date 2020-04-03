@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>onselectstart事件</title>
+</head>
+<body>
+<div style="border:3px blue solid;padding: 30px;width: 500px;height: 260px" id="a">
+    <div id="tmp1" onselectstart="return false" style="border:3px blue solid;padding: 30px;width: 200px;height: 40px;margin: 10px">onselectstart="return
+        false" 无法选中我</div>
+    <div id="tmp2" style="border:3px blue solid;padding: 30px;width: 200px;height: 40px;margin: 10px">可以选中我</div>
+</div>
+
+<!--属性、方法、事件-->
+<br>
+<br>
+<br>
+<hr>
+<div style="font-size:20px">
+    <div>
+        <ol><b style="font-size: 30px">hello：</b>
+            <li>简介:为目标对象被开始选中时（即选中动作刚开始，尚未实质性被选中）,返回false则取消选中。</li>
+            <li>几乎可以用于所有对象，但onselectstart事件不被input和textarea标签支持，而onselect事件只被input和textarea支持。。</li>
+        </ol>
+    </div>
+</div>
+</body>
+</html>

@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>目标模态框</title>
+    <title>模态框</title>
 </head>
 <body>
-<p>通过window.returnValue向打开对话框的窗口返回信息，当然也可以返回对象。</p>
 </body>
 </html>
 <script>
@@ -13,7 +12,7 @@
     var name = obj.name;
     alert("源页面传递给模态框的数据：" + name);
     var objb = new Object();
-    objb.name = "wo";
+    objb.name = "lucy";
     window.returnValue = objb;
     /*   window.close();*/
 </script>
