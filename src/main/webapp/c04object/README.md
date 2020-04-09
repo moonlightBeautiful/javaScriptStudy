@@ -12,8 +12,10 @@ js对象：
             每一个函数都有一个arguments对象，它包括了函数所要调的参数，通常我们把它当作数组使用
         还有 Boolean对象;4.Math对象;5.Number对象;6.Object对象;7.RegExp对象;9.Global对象;等等
    3.浏览器window对象
-        1.有全局的变量都是window的属性
+        1.有全局的变量都是window的属性，在函数外面声明或者函数内部
         2.所有全局的函数都是window的方法
+            使用var定义变量，则方法外是全局变量，方法内是局部变量。
+            不使用var定义变量，则是全局变量，但是需要函数执行一下，方法内部定义的全局变量才有效。
         常用内置函数：
             escape()、eval()【计算 JavaScript 字符串，并把它作为脚本代码来执行。】等等
             alert()、confirm、prompt
@@ -23,6 +25,10 @@ js对象：
         常用属性
             onload=func()：文档加载完毕后执行   也等于=body标签上行 onload="func()"
             onresize=func()：浏览器窗口大小发生变化后执行  
+        浏览器中有文档，文档有document对象。
+        document是window的一个对象属性。Window 对象表示浏览器中打开的窗口。
+        如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。
+        document   对 Document 对象的只读引用。
         
    
    

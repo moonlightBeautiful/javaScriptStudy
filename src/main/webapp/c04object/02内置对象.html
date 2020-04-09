@@ -53,23 +53,25 @@
 
 
     //4. function对象
-    /*function say1(name,age) { //实例化方式1
-        alert(name+"："+age);
+    /*function say1(name, age) { //实例化方式1
+        alert(name + "：" + age);
     }
-    //say1(1,2);
-    var sayFunc = new Function("name", "age", "alert(name+'今年'+age+'岁了')"); //实例化方式2  最后一个参数是方法体
-    //sayFunc("李四", 4);
-    alert("sayFunc方法对象属性length入参个数：" + sayFunc.length);
+    say1(1, 2);*/
+    /*var sayFunc = new Function("name", "age", "alert(name+'今年')"); //实例化方式2  最后一个参数是方法体
+    sayFunc("李四", 4);*/
+    /*alert("sayFunc方法对象属性length入参个数：" + sayFunc.length);
     alert("sayFunc方法对象方法toString()源码：" + sayFunc.toString());
     alert("sayFunc方法对象方法valueOf()源码：" + sayFunc.valueOf());*/
-    //note1：下面这种实例化方式带方法名，对象可用，方法名不可以用
-    /*var sayFunc = function say(name, age) {
+   /* var sayFunc = function say(name, age) {       //note1：下面这种实例化方式虽然带方法名，但方法名不可以用
         alert(name + "今年" + age + "岁了");
     };
     sayFunc("张三", 3);//可用
     say("张三", 3); //不可用*/
-    //note2：声明相同方法名的方法，后面的覆盖前面的，同一个方法名只能存在一个，不管传入的参数是几个，一次匹配，匹配不到的就undefined，匹配多的就无效
-    /* function say(name, age) {
+   /**
+    * 重复定义相同名字函数，后面覆盖前面，不管入参，只管名字
+    */
+
+   /*  function say(name, age) {
          alert(name + "今年" + age + "岁了");
      }
      function say(name, age, food) {
