@@ -7,46 +7,103 @@
 <body>
 <script type="text/javascript">
     /**
-     * 定义对象方式1
+     * 创建对象的几种常见方式:
+     *      1.使用Object或对象字面量创建对象
+     *      2.工厂模式创建对象
+     *      3.构造函数模式创建对象
+     *      4.原型模式创建对象
+     * /
+     *
+     /**
+     * 1，使用Object或对象字面量创建对象,JS中最基本创建对象的方式：
      */
-    /*var p = new Object();  //定义一个对象
-    p.name = "Jack"; // 动态的添加属性
+    /*var student = new Object();
+    student.name = "easy";
+    student.age = "20";
     function speak(something) {
         alert(something);
     }
+    p.myFunc = speak; */
+    /* var sutdent2 = {
+         name: "easy",
+         age: 20,
+         say:function () {
+             alert(this.name);
+         }
+     }
+     alert("name：" + sutdent2.name);
+     sutdent2.say();
+     delete p.name;    // 动态的删除属性   p.name=undefined;    // 动态的删除属性,方式2
+     alert("p.name：" + p.name);
+     delete p.myFunc;  // 动态的删除方法  p.func=undefined;       // 动态的删除方法，方式1
+     p.myFunc("p.myFunc：" + "Hello,Hello,大家好！");*/
 
-    p.myFunc = speak;  // 动态的添加方法
-
-    /!*  p.myFunc = function (something) {
-          alert(something);
-      };  // 或者这样动态的添加方法*!/
-    alert("p.name：" + p.name);
-    p.myFunc("p.myFunc：" + "Hello,Hello,大家好！");
-    delete p.name;    // 动态的删除属性   p.name=undefined;    // 动态的删除属性,方式2
-    alert("p.name：" + p.name);
-    delete p.myFunc;  // 动态的删除方法  p.func=undefined;       // 动态的删除方法，方式1
-    p.myFunc("p.myFunc：" + "Hello,Hello,大家好！");
-    //还有一种动态删除方式
-    */
     /**
-     * 定义对象方式2
+     * 2 工厂模式创建对象：但是任何对象都是object类型，没有具体类型
      */
-    /*function person(name, age) {
-        this.name2 = name;  //对象属性，相当于类的成员变量
-        this.age2 = age;
+    /* function createStudent(name, age) {
+         var obj = new Object();
+         obj.name = name;
+         obj.age = age;
+         return obj;
+     }
+     var student1 = createStudent("easy1", 20);  //创建的对象都是Object类型
+     var student2 = createStudent("easy2", 20);
+     var studentn = createStudent("easyn", 20);
+     alert(studentn instanceof Object);   /true*/
 
-        function speak(something) {
-            alert(something);
-        }
-
-        this.func = speak;  //对象属性，相当于类的成员方法
+    /**
+     * 3 构造 函数模式创建对象 ： 可以区分类型
+     *  构造函数与普通函数唯一的区别在于调用方法。
+     *      在于任意函数，使用new操作符调用，那么它就是构造函数；不使用new操作符调用，那么它就是普通函数
+     *  约定构造函数名以大写字母开头，普通函数以小写字母开头
+     */
+    /*function Student(name, age) {
+        this.name = name;
+        this.age = age;
+        this.alertName = function () {
+            alert(this.name)
+        };
     }
 
-    var p1 = new person("Jack", 12);
-    alert(p1.name2);
-    alert(p1.age2);
-    p1.func("Hello,EveryOne!");*/
+    function Fruit(name, color) {
+        this.name = name;
+        this.color = color;
+        this.alertName = function () {
+            alert(this.name)
+        };
+    }
 
+    var v1 = new Student("easy", 20); //创建的对象是Student类型
+    var v2 = new Fruit("apple", "green");//创建的对象是Fruit类型
+    alert(v1 instanceof Student);  //true
+    alert(v2 instanceof Student);  //false
+    alert(v1 instanceof Fruit);  //false
+    alert(v2 instanceof Fruit);  //true
+
+    alert(v1 instanceof Object);  //true 任何对象均继承自Object
+    alert(v2 instanceof Object);  //true 任何对象均继承自Object*/
+
+    /**
+     * 4  原型的模式创建对象
+     */
+    function Student() {
+        this.name = 'easy';
+        this.age = 20;
+    }
+
+
+    Student.prototype.alertName = function(){
+        alert(this.name);
+    };
+
+    var stu1 = new Student();
+    var stu2 = new Student();
+
+    stu1.alertName();  //easy
+    stu2.alertName();  //easy
+
+    alert(stu1.alertName == stu2.alertName);  //true 二者共享同一函数
 </script>
 </body>
 </html>

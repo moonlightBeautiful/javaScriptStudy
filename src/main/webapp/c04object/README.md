@@ -29,6 +29,26 @@ js对象：
         document是window的一个对象属性。Window 对象表示浏览器中打开的窗口。
         如果文档包含框架（frame 或 iframe 标签），浏览器会为 HTML 文档创建一个 window 对象，并为每个框架创建一个额外的 window 对象。
         document   对 Document 对象的只读引用。
+   4.函数对象
+        一，普通函数
+            function 函数名 (参数){ 函数体;
+                return 返回值;
+            }
+        二.函数调用形式
+            1.
+                function add(){
+                  alert("函数被调用了")；
+                  alert(this);//当前的this指向了window
+                //执行的一些操作
+                }   
+                //2.函数的执行
+                add()；
+            2.
+                var add = function(){
+                    alert('函数被调用了')；
+                }
+                add()
+                
         
    
    
