@@ -17,6 +17,7 @@ JavaScript
                 var a = "你好"; 
             3.布尔类型
                 var a = true; 
+                0 表示 false，非 0 表示 true
             4.undefined类型，不含有值
                 var a; 
             5.null，空值
