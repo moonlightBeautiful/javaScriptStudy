@@ -5,18 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-框架1， <input type="button" name="btn2" id="btn2" onclick="aa()" value="点击按钮控制父页面"/>
+框架1， <input type="button" name="btn2" id="btn2" onclick="callParent()" value="调用父页面的函数和变量"/>
 </body>
 </html>
 
 <script>
+    var a = "我是iframe1的变量";
 
-    function aa() {
+    function callParent() {
         var oDiv = window.parent.document.body.children[0];
         oDiv.style.color = 'red';
         window.parent.bb();
     }
+
     function iframe1Method1() {
-        alert("父调用子iframe1");
+        alert("我是iframe1的函数");
     }
 </script>

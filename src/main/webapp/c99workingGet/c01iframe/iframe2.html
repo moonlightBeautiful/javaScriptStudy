@@ -12,8 +12,8 @@
 <script>
 
     function aa() {
-        var oDiv = window.parent.document.body.children[0];
-        oDiv.style.color = 'red';
+        window.parent.document.body.children[0].style.color= 'red';
+        alert(window.parent.b);
         window.parent.bb();
     }
     function iframe1Method1() {
