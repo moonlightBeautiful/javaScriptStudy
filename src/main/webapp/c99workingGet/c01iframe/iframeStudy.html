@@ -7,23 +7,28 @@
 <script>
     alert(undefined == null);  //undefined等于null。 返回true
     function callIframe1() {
-        var iframe1 = document.getElementById('iframe1');
+        /*var iframe1 = document.getElementById('iframe1');
         //demo1.html页面中的js控制了iframe1.html页面的字体颜色
         alert(iframe1.contentWindow.a); //调用iframe页面变量
         iframe1.contentWindow.iframe1Method1(); //调用iframe页面函数方法
-        iframe1.contentWindow.document.body.style.color = 'red';     //调用iframe页面document
+        iframe1.contentWindow.document.body.style.color = 'red';     //调用iframe页面document*/
+
+        //或者如下定义
+        alert(window.iframe1.a);
+        window.iframe1.iframe1Method1();
     }
 
     var b = "我是父页面的变量";
+
     function bb() {
         alert("我是父页面的函数。");
     }
 </script>
 <body>
 <input type="button" name="btn" onclick="callIframe1()" value="调用iframe1页面函数和变量"/>
-<iframe id="iframe1" src="iframe1.html" width="300" height="200"></iframe>
+<iframe id="iframe1" name="iframe1" src="iframe1.html" width="300" height="200"></iframe>
 iframe是行内框架，不会自动换行。
-<iframe id="iframe2" src="iframe1.html" width="300" height="200"></iframe>
+<iframe id="iframe2" name="iframe2" src="iframe2.html" width="300" height="200"></iframe>
 <hr>
 <ol>iframe对象(var iframe1 = document.getElementById('iframe1');)的属性：
     <li>frameborder:1、0， 规定是否显示框架周围的边框。</li>
@@ -35,5 +40,10 @@ iframe是行内框架，不会自动换行。
     <li>frames:返回iframe们的 window 对象的数组</li>
     <li>length:返回iframe们的 window 对象的数组的数量</li>
 </ol>
+<p>
+    如果iframe有name属性，则通过window.iframe得name值可以取到iframe的contentWindow属性
+</p>
+
+
 </body>
 </html>

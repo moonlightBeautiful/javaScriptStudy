@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-框架1， <input type="button" name="btn2" id="btn2" onclick="callParent()" value="调用父页面的函数和变量"/>
+框架1， <input type="button" name="btn2" id="btn1" onclick="callParent()" value="调用父页面的函数和变量"/><br/>
+<input type="button" name="btn2" id="btn2" onclick="callParent2()" value="直接调用父的函数和变量不可以"/><br/>
+<input type="button" name="btn2" id="btn3" onclick="callIframe2()" value="调用兄弟iframe2的函数和变量"/><br/>
 </body>
 </html>
 
@@ -15,7 +17,18 @@
     function callParent() {
         var oDiv = window.parent.document.body.children[0];
         oDiv.style.color = 'red';
+        alert(window.parent.b);
         window.parent.bb();
+    }
+
+    function callParent2() {
+        alert(b);
+        bb();
+    }
+
+    function callIframe2() {
+        alert( window.parent.iframe2.cc);
+        window.parent.iframe2.iframe2Method1();
     }
 
     function iframe1Method1() {
